@@ -83,7 +83,19 @@ Enter your choice (1 or 2):
     npm install
     ```
 
-### Usage
+### Start
+
+Automatic mode:
+```bash
+npm run auto
+```
+
+Manual mode:
+```bash
+npm run manual
+```
+
+## Usage
 
 The project is controlled via npm scripts defined in `package.json`. You can choose which mode you want to run.
 
@@ -91,17 +103,12 @@ The project is controlled via npm scripts defined in `package.json`. You can cho
 
 This mode is perfect when you need a standard, RESTful, and relational API quickly. It generates endpoints that follow the JSON:API specification.
 
-**1. Run the Command:**
-```bash
-npm run auto
-```
-
-**2. Describe Your Data:**
+**1. Describe Your Data:**
 The script will prompt you to describe your entity relationships in a single sentence.
 ? Describe your entity relationships: (a university has many programs and each program has many domains)
 > a blog has many posts and each post has many comments
 
-**3. Your API is Live!**
+**2. Your API is Live!**
 The server will start on localhost and list the generated endpoints
 ```bash
 🚀 Automatic API Server is running on http://localhost:xxxx
@@ -121,12 +128,8 @@ The server will start on localhost and list the generated endpoints
 #### Mode 2: Manual API (endpoint by endpoint)
 This mode is ideal when you need to mock specific, non-standard endpoints or have a very precise response structure in mind.
 
-**1. Run the Command:**
-```bash
-npm run manual
-```
 
-**2. Build Your Endpoints**
+**1. Build Your Endpoints**
 The script will repeatedly ask you to define endpoints until you are finished.
 Prompt 1: Add an endpoint? Choose Yes.
 Prompt 2: Enter the path. For example, /users or /users/:id/profile.
@@ -148,7 +151,7 @@ Editor Content for /products:
   "status": "available"
 }
 ```
-**3. Your API is Live!**
+**2. Your API is Live!**
 The server will start on localhost and list the generated endpoints
 ```bash
 🚀 Manual API Server is running on http://localhost:xxxx
@@ -168,7 +171,7 @@ Example JSON definition mixing static and dynamic data:
   "id": "faker.string.uuid",
   "username": "faker.internet.userName",
   "email": "faker.internet.email",
-  "account_type": "standard_user",  // This is a static value
-  "is_active": true                 // This is also static
+  "account_type": "standard_user", 
+  "is_active": true
 }
 ```
