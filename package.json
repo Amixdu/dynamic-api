@@ -1,0 +1,20 @@
+{
+  "name": "dynamic-api-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "auto": "node automatic.js",
+    "manual": "node controlled.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@faker-js/faker": "^9.8.0",
+    "express": "^5.1.0",
+    "inquirer": "^12.6.3",
+    "pluralize": "^8.0.0"
+  }
+}
