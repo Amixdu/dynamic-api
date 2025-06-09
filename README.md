@@ -30,33 +30,16 @@ OR
 
 ## Docker
 
-### 1. Build the Docker Image
-
-First, build the Docker image from the provided `Dockerfile`. This command only needs to be run once, or whenever you change the source code or dependencies.
-
-Navigate to the project's root directory in your terminal and run:
-
+### 1. Run start command
 ```bash
-docker build -t dynamic-api .
+./start.sh
 ```
 
--t dynamic-api assigns the name dynamic-api to the image.
+* This shell script is a simple wrapper for the docker compose run command with arguments
+* A compose file technically not needed as theres only one service and the docker build and docker start could be run in the start.sh, but included for scalability and seperation of concerns (shell script is a simple wrapper)
 
-### 2. Run the Container
 
-Now, run the container. This command will start the interactive menu, allowing you to choose which API server to launch.
-
-```bash
-docker run --rm -it -p 3001:3001 -p 3002:3002 dynamic-api
-```
-
-* --rm: Automatically removes the container when it stops, keeping your system clean.
-* -it: Essential for interactivity. It connects your terminal to the container's input/output.
-* -p 3001:3001: Maps port 3001 on your machine to port 3001 in the container (for the Automatic API).
-* -p 3002:3002: Maps port 3002 on your machine to port 3002 in the container (for the Manual API).
-* dynamic-api: The name of the image.
-
-### 3. Choose Your Mode
+### 2. Choose Your Mode
 
 ```text
 =========================================
@@ -68,6 +51,34 @@ Select which API server to start:
 
 Enter your choice (1 or 2):
 ```
+
+
+### Build the Docker Image (if needed)
+
+uild the Docker image from the provided `Dockerfile`. This command only needs to be run once, or whenever you change the source code or dependencies.
+
+Navigate to the project's root directory in your terminal and run:
+
+```bash
+docker build -t dynamic-api .
+```
+
+-t dynamic-api assigns the name dynamic-api to the image.
+
+### Run the Container (if needed)
+
+Run the container. This command will start the interactive menu, allowing you to choose which API server to launch.
+
+```bash
+docker run --rm -it -p 3001:3001 -p 3002:3002 dynamic-api
+```
+
+* --rm: Automatically removes the container when it stops, keeping your system clean.
+* -it: Essential for interactivity. It connects your terminal to the container's input/output.
+* -p 3001:3001: Maps port 3001 on your machine to port 3001 in the container (for the Automatic API).
+* -p 3002:3002: Maps port 3002 on your machine to port 3002 in the container (for the Manual API).
+* dynamic-api: The name of the image.
+
 
 ## Local (Non docker)
 

@@ -1,0 +1,13 @@
+services:
+  api:
+    # Build image from the Dockerfile in the current directory
+    build: .
+
+    # Map the host ports to the container ports.
+    ports:
+      - "3001:3001"
+      - "3002:3002"
+
+    # These two lines are the equivalent of the '-it' flag.
+    stdin_open: true  # Corresponds to -i
+    tty: true         # Corresponds to -t
